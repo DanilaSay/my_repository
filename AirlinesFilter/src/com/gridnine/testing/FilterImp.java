@@ -7,28 +7,36 @@ import java.util.stream.Collectors;
 
 public class FilterImp implements Filter {
 
-	public List<Flight> todayFilter(List<Flight> flights) {
+	public List<Flight> beforeTodayFilter(List<Flight> flights) {
 
 		LocalDateTime today = LocalDateTime.now();
 
-		flights.stream()
+		return flights.stream()
 				.filter(f -> f.getSegments()
 						.equals((f.getSegments().stream().filter(se -> se.getDepartureDate().isBefore(today))
 								.collect(Collectors.toList()))))
-				.collect(Collectors.toList()).forEach(System.out::println);
-
-		return flights;
+				.collect(Collectors.toList());
 
 	}
 
 	@Override
-	public List<Flight> dateFilter(List<Flight> flights) {
+	public List<Flight> arrBeforeDepdateFilter(List<Flight> flights) {
 
-		flights.stream().filter(f -> f.getSegments().equals((f.getSegments().stream()
-				.filter(se -> se.getArrivalDate().isBefore(se.getDepartureDate())).collect(Collectors.toList()))))
-				.collect(Collectors.toList()).forEach(System.out::println);
+		List<Flight> fly = new ArrayList<>();
 
-		return flights;
+		for (int i = 0; i < flights.size(); i++) { // iterating elements type Flight
+			for (int j = 0; j < flights.get(i).getSegments().size(); j++) { // iterating elements type Segments
+				if (flights.get(i).getSegments().get(j).getArrivalDate()
+						.isBefore(flights.get(i).getSegments().get(j).getDepartureDate())) {
+					fly.add(flights.get(i));
+				}
+
+			}
+
+		}
+
+		fly.stream().forEach(System.out::println);
+		return fly;
 	}
 
 	@Override
@@ -52,7 +60,7 @@ public class FilterImp implements Filter {
 			sum = 0;
 		}
 
-		System.out.println(fly);
+		fly.stream().forEach(System.out::println);
 		return fly;
 	}
 

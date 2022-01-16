@@ -14,13 +14,17 @@ public class Main {
 		 * Filter flights in which arrival date is before today
 		 */
 
-		filter.todayFilter(flights);
+		filter.beforeTodayFilter(flights).forEach(System.out::println);
+
+		System.out.println();
 
 		/*
 		 * Filter flights in which arrival date is before departure date
 		 */
 
-		filter.dateFilter(flights);
+		filter.arrBeforeDepdateFilter(flights);
+
+		System.out.println();
 
 		/*
 		 * Filter flights in which time on Earth is more than two hours
