@@ -8,5 +8,4 @@ public interface Filter {
 
 	List<Flight> arrBeforeDepdateFilter(List<Flight> flights);
 
-	List<Flight> earthTimeFilter(List<Flight> flights);
 }

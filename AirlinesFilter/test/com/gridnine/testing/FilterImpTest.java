@@ -38,19 +38,6 @@ class FilterImpTest {
 		assertEquals(testlist, filter.arrBeforeDepdateFilter(testlist));
 	}
 
-	@Test
-	void testThirdFilterNoRightData() {
-
-		LocalDateTime threeDaysFromNow = LocalDateTime.now().plusDays(3);
-
-		List<Flight> testlist = Arrays.asList(createFlight(threeDaysFromNow, threeDaysFromNow.plusHours(2)));
-
-		FilterImp filter = new FilterImp();
-
-		List<Flight> emptylist = new ArrayList<>();
-
-		assertEquals(emptylist, filter.earthTimeFilter(testlist));
-	}
 
 	private Flight createFlight(final LocalDateTime... dates) {
 		if ((dates.length % 2) != 0) {

@@ -1,11 +1,13 @@
 package ru.sayfulin.springcourse.dao;
 
-import java.util.List;
 
+import java.util.Set;
+
+import ru.sayfulin.springcourse.exceptions.FlightListFormatException;
 import ru.sayfulin.springcourse.model.Flight;
 
 public interface FlightDao {
 	
-	public List<Flight> index();
+	public Set<Flight> index() throws FlightListFormatException;
 
 }

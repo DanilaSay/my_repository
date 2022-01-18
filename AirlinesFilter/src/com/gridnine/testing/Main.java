@@ -22,15 +22,10 @@ public class Main {
 		 * Filter flights in which arrival date is before departure date
 		 */
 
-		filter.arrBeforeDepdateFilter(flights);
+		filter.arrBeforeDepdateFilter(flights).forEach(System.out::println);
 
 		System.out.println();
 
-		/*
-		 * Filter flights in which time on Earth is more than two hours
-		 */
-
-		filter.earthTimeFilter(flights);
 
 	}
 

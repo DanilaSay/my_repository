@@ -16,6 +16,10 @@
 		out.print(name + "<br/>");
 	}
 	%>
+	<form method="POST" action="/person">
+	<label for="name">Name</label>
+	<input />
+	</form>
 	
 	
 </body>

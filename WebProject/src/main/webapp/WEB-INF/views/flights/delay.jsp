@@ -6,9 +6,8 @@
 </head>
 <body>
 
-	<div th:each="flights : ${flights}">
-		<a th:text="${flights.getOriginStateName()}">flight</a>
-		<a th:text="${flights.getCancellationCode()}">flight</a>
+	<div th: ${delay}">
+		<a th:text="${statisticInfAirCarriers.BigDelays()}">flight</a>
 
 	</div>
 
